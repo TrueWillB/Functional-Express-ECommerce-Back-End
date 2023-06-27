@@ -1,4 +1,5 @@
 const express = require("express");
+//The routes for the server are defined in the routes folder and imported here to be .used() by the server
 const routes = require("./routes");
 // import sequelize connection
 const sequelize = require("./config/connection");
