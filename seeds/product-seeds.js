@@ -8,12 +8,6 @@ const productData = [
     category_id: 1,
   },
   {
-    product_name: "Strawberry flavored t-shirt",
-    price: 50.0,
-    stock: 13,
-    category_id: 1,
-  },
-  {
     product_name: "Running Sneakers",
     price: 90.0,
     stock: 25,
