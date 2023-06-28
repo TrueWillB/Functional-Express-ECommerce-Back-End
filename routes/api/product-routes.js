@@ -52,6 +52,7 @@ router.post("/", (req, res) => {
       "price": 200.00,
       "stock": 3,
       "tagIds": [3, 4]
+      "category_id": 6
     }
   */
   Product.create(req.body)
@@ -137,7 +138,9 @@ router.delete("/:id", async (req, res) => {
     });
     res
       .status(200)
-      .json({ message: `Product with id ${req.params.id} deleted` });
+      .json({
+        message: `Product with id ${req.params.id} and tag associations deleted`,
+      });
   } catch (err) {
     res.status(500).json(err);
   }
