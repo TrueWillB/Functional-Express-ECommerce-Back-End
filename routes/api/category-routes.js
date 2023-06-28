@@ -49,7 +49,6 @@ router.post("/", async (req, res) => {
   try {
     //simply takes in the json data from the post request body, then creates it in the table based on the Category model
     console.log("POST /api/categories");
-    console.log(req.body);
     const newCategory = await Category.create(req.body);
     //returns a successful code if the request is successful
     res.status(200).json(newCategory);
@@ -61,7 +60,6 @@ router.post("/", async (req, res) => {
 router.put("/:id", async (req, res) => {
   // update a category by its `id` value
   try {
-    const updateCategoryData = req.body;
     await Category.update(
       {
         category_name: req.body.category_name,
@@ -73,7 +71,7 @@ router.put("/:id", async (req, res) => {
       }
     );
     //I decided to return the updated category data to the user
-    res.status(200).json(await Category.findByPk(req.params.id));
+    res.status(200).json({ message: `Category updated successfully` });
   } catch (err) {}
 });
 
